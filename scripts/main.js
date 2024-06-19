@@ -13,7 +13,7 @@ let forecastCardsContainer;
 
 document.addEventListener('DOMContentLoaded', function () {
     weather = {
-        apiKey: "1a20b4367198f1da28381a9982a1f20f",
+        apiKey: "",
         fetchWeather: function (lat, long, days) {
             fetch(
                 `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&units=metric&cnt=${days * 8}&appid=${this.apiKey}`
