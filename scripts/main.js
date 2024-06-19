@@ -1,5 +1,5 @@
-const PEXELS_API_KEY = "fAWSUxllyRbEXU5rhenwcIJ9tyB9ZIVdH9XDjssbVf6gXUToD2yq02m8";
-const OPENWEATHER_API_KEY = "1a20b4367198f1da28381a9982a1f20f";
+const PEXELS_API_KEY = "";
+const OPENWEATHER_API_KEY = "";
 const rootElement = document.getElementById('root');
 
 let spinner = document.createElement('div');
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (inputValue.length >= 3) {
             try {
-                const response = await fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${inputValue}&apiKey=0bd1644e2e5646abb9ea3eb6a0408e1a`);
+                const response = await fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${inputValue}&apiKey=`);
                 const data = await response.json();
 
                 if (data.features) {
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.fetchWeatherData = function (city) {
         city=city.trim();
         
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a20b4367198f1da28381a9982a1f20f`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (cityInput) {
             spinner.removeAttribute('hidden');
 
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(cityInput)}&units=metric&appid=1a20b4367198f1da28381a9982a1f20f`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(cityInput)}&units=metric&appid=`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
